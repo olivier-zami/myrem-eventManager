@@ -1,0 +1,31 @@
+{# templates/page/registrationEditor.html.twig #}
+
+{% extends 'page.html.twig' %}
+
+{% block body %}
+<h1>Evenement</h1>
+<p>du {{event.start|date("d/m/Y H:i:s")}} au {{event.end|date("d/m/Y H:i:s")}}</p>
+
+<section>
+    <h2>Liste des reservations</h2>
+{%if registrationList is empty%}
+    <p>Cet évenement n'a pas de réservation ...</p>
+{%else%}
+    {% include 'htmlElement/registrationList.html.twig' %}
+{%endif%}
+</section>
+
+<section style="border: solid 1px #000;">
+    <h2>Formulaire d'inscription</h2>
+{% if isEventFull %}
+    <p>Le formulaire ne devrait pas apparaitre mais il est laissé pour les tests</p>
+{% endif %}
+    <form action="/action/registration{%if event.id%}?eventId={{event.id}}{%endif%}" method="POST">
+        <div><span>nom</span><input name="registration[lastName]" type="text" size="35"/></div>
+        <div><span>prenom</span><input name="registration[firstName]" type="text" size="35"/></div>
+        <div><span>email</span><input name="registration[email]" type="text" size="35"/></div>
+        <div><span>telephone</span><input name="registration[phoneNumber]" type="text" size="35"/></div>
+        <button type="submit">Enregistrer</button>
+    </form>
+</section>
+{% endblock %}

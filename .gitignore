@@ -1,0 +1,15 @@
+
+###> symfony/framework-bundle ###
+.idea/
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/bin/
+/var/
+/vendor/
+/fixtures/
+/LICENSE
+/todo.txt
+/composer.lock
+/symfony.lock
+*Test.php
+###< symfony/framework-bundle ###

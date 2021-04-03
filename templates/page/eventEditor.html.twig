@@ -1,0 +1,28 @@
+{# templates/page/eventEditor.html.twig #}
+
+{% extends 'page.html.twig' %}
+
+{% block body %}
+<h1>Evenement</h1>
+<form action="/action/event/update?id={{event.id}}&subject=event" method="POST" style="border: solid 1px #000; padding: .5em;">
+    <p>
+        du
+        <input name="event[start]" type="datetime-local" value="{{event.start|date("Y-m-d\\TH:i")}}"/>
+        <input name="event[update][start]" type="submit" value="mise a jour"/>
+        au
+        <input name="event[end]" type="datetime-local" value="{{event.end|date("Y-m-d\\TH:i")}}"/>
+        <input name="event[update][end]" type="submit" value="mise a jour"/>
+    </p>
+</form>
+
+
+
+<section>
+    <h2>Liste des reservations</h2>
+    {% if registrationList is empty %}
+    <p>Cet évenement n'a pas de réservation ...</p>
+    {% else %}
+        {% include 'htmlElement/registrationListEditor.html.twig' %}
+    {% endif %}
+</section>
+{% endblock %}

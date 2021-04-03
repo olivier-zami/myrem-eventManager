@@ -1,0 +1,30 @@
+indexPage:
+    path: /
+    controller: App\Controller\Page\IndexController::showPage
+eventEditorPage:
+    path: /eventEditor
+    controller: App\Controller\Page\EventEditorController::showPage
+registrationEditorPage:
+    path: /registration
+    controller: App\Controller\Page\RegistrationEditorController::showPage
+eventAddRegistration:
+    path: /action/event
+    methods: POST
+    controller: App\Controller\Action\Event::addRegistration
+updateEvent:
+    path: /action/event/update
+    methods: POST
+    controller: App\Controller\Action\Event::update
+deleteEvent:
+    path: /action/event/delete
+    methods: POST|GET
+    controller: App\Controller\Action\Event::delete
+createRegistration:
+    path: /action/registration
+    methods: POST
+    controller: App\Controller\Action\Registration::create
+deleteRegistration:
+    path: /action/registration/delete
+    methods: POST
+    controller: App\Controller\Action\Registration::delete
+

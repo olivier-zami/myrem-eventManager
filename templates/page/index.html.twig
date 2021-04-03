@@ -1,0 +1,14 @@
+{# templates/page/index.html.twig #}
+
+{% extends 'page.html.twig' %}
+
+{% block body %}
+    <h1>Mon gestionnaire d'évenements ...</h1>
+
+    <section>
+        <h2>Liste des evenements</h2>
+        {% set eventList = selectedEvent %}
+        {% include 'htmlElement/eventList.html.twig' %}
+        <a href="/eventEditor">Créer un évenement</a>
+    </section>
+{% endblock %}

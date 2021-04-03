@@ -1,0 +1,12 @@
+{# templates/htmlElement/eventList.html.twig #}
+
+<ul>
+{% for event in eventList %}
+    <li>
+        Evenement entre {{event.start|date("d/m/Y H:i:s")}} et {{event.end|date("d/m/Y H:i:s")}}
+        <a href="/registration?eventId={{event.id}}">inscription</a>
+        <a href="/eventEditor?id={{event.id}}">modifier</a>
+        <a href="/action/event/delete?id={{event.id}}">supprimer</a>
+    </li>
+{% endfor %}
+</ul>

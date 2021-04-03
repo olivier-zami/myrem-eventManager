@@ -1,0 +1,19 @@
+<form action="/action/event/update?id={{event.id}}&subject=registration" method="POST" style="display: table">
+    <header style="display: table-row;">
+        <input style="display: table-cell; font-weight: bold;" disabled="true" value="nom"/>
+        <input style="display: table-cell; font-weight: bold;" disabled="true" value="prenom"/>
+        <input style="display: table-cell; font-weight: bold;" disabled="true" value="email"/>
+        <input style="display: table-cell; font-weight: bold;" disabled="true" value="telephone"/>
+    </header>
+    <section>
+        {% for registration in registrationList %}
+        <div style="display: table-row;">
+            <input name="registration[{{registration.id}}][lastName]" type="text"style="display: table-cell;" value="{{registration.lastName}}"/>
+            <input name="registration[{{registration.id}}][firstName]" type="text"style="display: table-cell;" value="{{registration.firstName}}"/>
+            <input name="registration[{{registration.id}}][email]" type="text"style="display: table-cell;" value="{{registration.email}}"/>
+            <input name="registration[{{registration.id}}][phoneNumber]" type="text"style="display: table-cell;" value="{{registration.phoneNumber}}"/>
+            <input name="registration[id][{{registration.id}}]" type="submit" value="modifier"/>
+        </div>
+        {% endfor %}
+    </section>
+</form>

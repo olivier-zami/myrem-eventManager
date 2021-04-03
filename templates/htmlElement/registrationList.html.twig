@@ -1,0 +1,20 @@
+{# templates/htmlElement/registrationList.html.twig #}
+
+<table>
+    <thead>
+        <th>nom</th>
+        <th>prénom</th>
+        <th>email</th>
+        <th>numéro de téléphone</th>
+    </thead>
+    <tbody>
+    {% for registration in registrationList %}
+        <tr>
+            <td>{{registration.lastName}}</td>
+            <td>{{registration.firstName}}</td>
+            <td>{{registration.email}}</td>
+            <td>{{registration.phoneNumber}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
